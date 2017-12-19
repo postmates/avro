@@ -81,9 +81,9 @@ STRUCT_CRC32 = struct_class('>I')   # big-endian unsigned int
 class AvroTypeException(schema.AvroException):
   """Raised when datum is not an example of schema."""
   def __init__(self, expected_schema, datum):
-    # pretty_expected = json.dumps(json.loads(str(expected_schema)), indent=2)
+    pretty_expected = json.dumps(json.loads(str(expected_schema)), indent=2)
     fail_msg = "The datum %s is not an example of the schema %s"\
-               % (datum, str(expected_schema))
+               % (datum, pretty_expected)
     schema.AvroException.__init__(self, fail_msg)
 
 class SchemaResolutionException(schema.AvroException):
