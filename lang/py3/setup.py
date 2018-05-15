@@ -116,8 +116,6 @@ def Main():
   if not RunsFromSourceDist():
     SetupSources()
 
-  # avro_version = ReadVersion()
-
   setup(
       name = 'avro-python3',
       version = '1.8.2+postmates.1',
